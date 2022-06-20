@@ -2,8 +2,8 @@ import 'babel-polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { initialize, getConfig, subscribe, APP_READY } from '@edx/frontend-platform';
-import { AppContext, AppProvider } from '@edx/frontend-platform/react';
+import { initialize, getConfig, subscribe, APP_READY } from 'frontend-platform-vi';
+import { AppContext, AppProvider } from 'frontend-platform-vi/react';
 import Header from '@edx/frontend-component-header';
 
 import './index.scss';

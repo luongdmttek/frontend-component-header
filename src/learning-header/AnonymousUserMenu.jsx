@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { getConfig } from '@edx/frontend-platform';
-import { getLoginRedirectUrl } from '@edx/frontend-platform/auth';
-import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
+import { getConfig } from 'frontend-platform-vi';
+import { getLoginRedirectUrl } from 'frontend-platform-vi/auth';
+import { injectIntl, intlShape } from 'frontend-platform-vi/i18n';
 import { Button } from '@edx/paragon';
 
 import genericMessages from '../generic/messages';

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
-import { getConfig } from '@edx/frontend-platform';
+import { injectIntl, intlShape } from 'frontend-platform-vi/i18n';
+import { getConfig } from 'frontend-platform-vi';
 
 // Local Components
 import { Menu, MenuTrigger, MenuContent } from './Menu';

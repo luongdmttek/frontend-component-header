@@ -8,13 +8,13 @@ import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
 import 'babel-polyfill';
 import 'jest-chain';
-import { getConfig, mergeConfig } from '@edx/frontend-platform';
-import { configure as configureLogging } from '@edx/frontend-platform/logging';
-import { configure as configureI18n } from '@edx/frontend-platform/i18n';
-import { configure as configureAuth, MockAuthService } from '@edx/frontend-platform/auth';
+import { getConfig, mergeConfig } from 'frontend-platform-vi';
+import { configure as configureLogging } from 'frontend-platform-vi/logging';
+import { configure as configureI18n } from 'frontend-platform-vi/i18n';
+import { configure as configureAuth, MockAuthService } from 'frontend-platform-vi/auth';
 import { render as rtlRender } from '@testing-library/react';
 import { IntlProvider } from 'react-intl';
-import AppProvider from '@edx/frontend-platform/react/AppProvider';
+import AppProvider from 'frontend-platform-vi/react/AppProvider';
 import appMessages from './i18n';
 
 Enzyme.configure({ adapter: new Adapter() });

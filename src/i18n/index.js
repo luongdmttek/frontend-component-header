@@ -14,6 +14,7 @@ import frMessages from './messages/fr.json';
 import kokrMessages from './messages/ko_KR.json';
 import ptbrMessages from './messages/pt_BR.json';
 import zhcnMessages from './messages/zh_CN.json';
+import viMessages from './messages/vi.json';
 
 const messages = {
   ar: arMessages,
@@ -29,6 +30,7 @@ const messages = {
   'zh-cn': zhcnMessages,
   'ko-kr': kokrMessages,
   'pt-br': ptbrMessages,
+  vi: viMessages,
 };
 
 export default messages;

@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import Responsive from 'react-responsive';
-import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
-import { AppContext } from '@edx/frontend-platform/react';
+import { injectIntl, intlShape } from 'frontend-platform-vi/i18n';
+import { AppContext } from 'frontend-platform-vi/react';
 import {
   APP_CONFIG_INITIALIZED,
   ensureConfig,
   mergeConfig,
   getConfig,
   subscribe,
-} from '@edx/frontend-platform';
+} from 'frontend-platform-vi';
 
 import DesktopHeader from './DesktopHeader';
 import MobileHeader from './MobileHeader';
