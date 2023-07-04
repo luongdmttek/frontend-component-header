@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/images/index.js"],"names":["IMAGES","logo","require"],"mappings":"AAAA,IAAMA,MAAM,GAAG;AACXC,EAAAA,IAAI,EAAEC,OAAO,CAAC,YAAD,CAAP;AADK,CAAf;AAIA,eAAeF,MAAf","sourcesContent":["const IMAGES = {\n    logo: require('./logo.png').default,\n}\n\nexport default IMAGES;"],"file":"index.js"}

@@ -12,6 +12,7 @@ import {
 
 import DesktopHeader from './DesktopHeader';
 import MobileHeader from './MobileHeader';
+import IMAGES from './images'
 
 import messages from './Header.messages';
 
@@ -89,7 +90,7 @@ const Header = ({ intl }) => {
   ];
 
   const props = {
-    logo: config.LOGO_URL,
+    logo: IMAGES.logo,
     logoAltText: config.SITE_NAME,
     logoDestination: `${config.LMS_BASE_URL}/dashboard`,
     loggedIn: authenticatedUser !== null,
