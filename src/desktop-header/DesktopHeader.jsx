@@ -14,6 +14,7 @@ import { desktopHeaderMainOrSecondaryMenuDataShape } from './DesktopHeaderMainOr
 import DesktopSecondaryMenuSlot from '../plugin-slots/DesktopSecondaryMenuSlot';
 import DesktopUserMenuSlot from '../plugin-slots/DesktopUserMenuSlot';
 import { desktopUserMenuDataShape } from './DesktopHeaderUserMenu';
+import { UseDeleteCookiesOnTabClose } from './deleteCookiesCloseTab';
 
 // i18n
 import messages from '../Header.messages';
@@ -44,6 +45,8 @@ class DesktopHeader extends React.Component {
       intl,
     } = this.props;
 
+    UseDeleteCookiesOnTabClose(['edx-user-info','lms_sessionid','edxloggedin', 'edx-jwt-cookie-signature'])
+    
     return (
       <Menu transitionClassName="menu-dropdown" transitionTimeout={250}>
         <MenuTrigger
