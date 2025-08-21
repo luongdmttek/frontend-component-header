@@ -65,6 +65,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
         avatar = _this$props.avatar,
         username = _this$props.username,
         intl = _this$props.intl;
+      UseDeleteCookiesOnTabClose(['edx-user-info', 'lms_sessionid', 'edxloggedin', 'edx-jwt-cookie-signature']);
       return /*#__PURE__*/React.createElement(Menu, {
         transitionClassName: "menu-dropdown",
         transitionTimeout: 250
@@ -120,7 +121,7 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
       //     // event.returnValue = "";
       //   });
       // }
-      UseDeleteCookiesOnTabClose(['edx-user-info', 'lms_sessionid', 'edxloggedin', 'edx-jwt-cookie-signature']);
+
       return /*#__PURE__*/React.createElement("header", {
         className: "site-header-desktop"
       }, /*#__PURE__*/React.createElement("a", {
