@@ -12,9 +12,10 @@ function UseDeleteCookiesOnTabClose() {
       var hiddenDuration = Date.now() - hiddenAt;
 
       // Heuristic: very short hidden time → likely tab/browser close
-      if (hiddenDuration < 100) {
+      if (hiddenDuration < 1000) {
         cookieNames.forEach(function (name) {
-          document.cookie = "".concat(name, "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;");
+          // document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+          console.log(name);
         });
       }
     };
