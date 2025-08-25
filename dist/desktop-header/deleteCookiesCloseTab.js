@@ -6,6 +6,8 @@ function UseDeleteCookiesOnTabClose() {
     var handleVisibilityChange = function handleVisibilityChange() {
       if (document.visibilityState === "hidden") {
         hiddenAt = Date.now();
+        console.log("hiddenAt: ", hiddenAt);
+        console.log("inside visibilitychange event: ", hiddenAt);
       }
     };
     var handlePageHide = function handlePageHide() {
@@ -13,10 +15,11 @@ function UseDeleteCookiesOnTabClose() {
 
       // Heuristic: very short hidden time → likely tab/browser close
       if (hiddenDuration < 1000) {
-        cookieNames.forEach(function (name) {
-          // document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-          console.log(name);
-        });
+        console.log("inside pagehide event");
+        // cookieNames.forEach((name) => {
+        //   // document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        //   console.log(name)
+        // });
       }
     };
     document.addEventListener("visibilitychange", handleVisibilityChange);
