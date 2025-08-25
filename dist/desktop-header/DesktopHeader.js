@@ -27,7 +27,7 @@ import { desktopHeaderMainOrSecondaryMenuDataShape } from './DesktopHeaderMainOr
 import DesktopSecondaryMenuSlot from '../plugin-slots/DesktopSecondaryMenuSlot';
 import DesktopUserMenuSlot from '../plugin-slots/DesktopUserMenuSlot';
 import { desktopUserMenuDataShape } from './DesktopHeaderUserMenu';
-import { UseDeleteCookiesOnTabClose } from './deleteCookiesCloseTab';
+// import { UseDeleteCookiesOnTabClose } from './deleteCookiesCloseTab';
 
 // i18n
 import messages from '../Header.messages';
