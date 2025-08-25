@@ -11,7 +11,7 @@ function _isNativeReflectConstruct() { try { var t = !Boolean.prototype.valueOf.
 function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
 function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
 function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
 import { getConfig } from '@edx/frontend-platform';
@@ -65,9 +65,36 @@ var DesktopHeader = /*#__PURE__*/function (_React$Component) {
         avatar = _this$props.avatar,
         username = _this$props.username,
         intl = _this$props.intl;
-      {
-        UseDeleteCookiesOnTabClose(['edx-user-info', 'lms_sessionid', 'edxloggedin', 'edx-jwt-cookie-signature']);
-      }
+
+      // { UseDeleteCookiesOnTabClose(['edx-user-info','lms_sessionid','edxloggedin', 'edx-jwt-cookie-signature']) }
+      useEffect(function () {
+        var hiddenAt = 0;
+        var handleVisibilityChange = function handleVisibilityChange() {
+          if (document.visibilityState === "hidden") {
+            hiddenAt = Date.now();
+            console.log("hiddenAt: ", hiddenAt);
+            console.log("inside visibilitychange event: ", hiddenAt);
+          }
+        };
+        var handlePageHide = function handlePageHide() {
+          var hiddenDuration = Date.now() - hiddenAt;
+
+          // Heuristic: very short hidden time → likely tab/browser close
+          if (hiddenDuration < 1000) {
+            console.log("inside pagehide event");
+            // cookieNames.forEach((name) => {
+            //   // document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+            //   console.log(name)
+            // });
+          }
+        };
+        document.addEventListener("visibilitychange", handleVisibilityChange);
+        window.addEventListener("pagehide", handlePageHide);
+        return function () {
+          document.removeEventListener("visibilitychange", handleVisibilityChange);
+          window.removeEventListener("pagehide", handlePageHide);
+        };
+      }, []);
       return /*#__PURE__*/React.createElement(Menu, {
         transitionClassName: "menu-dropdown",
         transitionTimeout: 250
