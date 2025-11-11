@@ -7,6 +7,8 @@ function UseDeleteCookiesOnTabClose(cookieNames = []) {
     const handleVisibilityChange = () => {
       if (document.visibilityState === "hidden") {
         hiddenAt = Date.now();
+        console.log("hiddenAt: ", hiddenAt);
+        console.log("inside visibilitychange event: ", hiddenAt);
       }
     };
 
@@ -14,10 +16,12 @@ function UseDeleteCookiesOnTabClose(cookieNames = []) {
       const hiddenDuration = Date.now() - hiddenAt;
 
       // Heuristic: very short hidden time → likely tab/browser close
-      if (hiddenDuration < 100) {
-        cookieNames.forEach((name) => {
-          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-        });
+      if (hiddenDuration < 1000) {
+        console.log("inside pagehide event")
+        // cookieNames.forEach((name) => {
+        //   // document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        //   console.log(name)
+        // });
       }
     };
 
